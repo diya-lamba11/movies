@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cine Finder</title>
+</head>
+
+<body
+  style="background: linear-gradient(to right, #fceabb, #f8b500); font-family: 'Arial', sans-serif; margin:0; padding:0;">
+
+  <!-- Header -->
+  <header class="header"
+    style="display: flex; align-items: center; justify-content: center; padding: 20px; font-size:30px; color:#4B1E00; text-shadow: 2px 2px #f7e1c4;">
+    <h1>Cine Finder 🎬</h1>
+  </header>
+
+  <!-- Search Section -->
+  <div class="search"
+    style="display: flex; align-items: center; justify-content: center; gap:15px; margin-bottom:20px;">
+    <input type="text" id="title" placeholder="Movie Title"
+      style="font-size:16px; font-weight:bold; border:1px solid #4B1E00; border-radius:8px; padding:10px; width:180px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <input type="number" id="year" placeholder="Year(optional)"
+      style="font-size:16px; font-weight:bold; border:1px solid #4B1E00; border-radius:8px; padding:10px; width:120px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+    <select id="type"
+      style="font-size:16px; font-weight:bold; border:1px solid #4B1E00; border-radius:8px; padding:10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+      <option value="">All</option>
+      <option value="movie">Movie</option>
+      <option value="series">Series</option>
+      <option value="episode">Episode</option>
+    </select>
+    <button id="search"
+      style="font-size:16px; font-weight:bold; border:none; border-radius:8px; padding:10px 20px; cursor:pointer; background-color:#4B1E00; color:white; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); transition: 0.3s;">
+      Search
+    </button>
+  </div>
+
+  <!-- Results Section -->
+  <div id="result"
+    style="display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap:15px; padding:20px;"></div>
+
+  <!-- Load More Button -->
+  <button id="loadMoreBtn"
+    style="display:none; margin:20px auto; padding:12px 25px; font-size:16px; font-weight:bold; cursor:pointer; border-radius:5px; background-color:#4B1E00; color:white; border:none; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+    Load More
+  </button>
+
+  <!-- Error Message -->
+  <div id="error" style="color:red; text-align:center; font-weight:bold; margin-bottom:10px;"></div>
+
+  <!-- Modal -->
+  <div id="movieModal"
+    style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;">
+    <div id="modal-content"
+      style="background-color:#fff3e0; color:black; border-radius: 12px; max-width:500px; width:90%; max-height:90%; padding:20px; text-align: center; overflow:auto; box-shadow: 0 0 15px rgba(0,0,0,0.4); position:relative;">
+      <span class="closeBtn" id="closeModal"
+        style="position:absolute; top:10px; right:15px; cursor:pointer; color:#4B1E00; font-size:28px; font-weight:bold;">&times;</span>
+      <div id="modalBody" style="padding-top:30px;"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/script.js"></script>
+
+</body>
+
+</html>
